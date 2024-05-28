@@ -9,9 +9,10 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: Arial, sans-serif;
-            background-color: #282c34;
-            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1d1f27;
+            color: #f0f0f0;
+            overflow: hidden;
         }
 
         #particles-js {
@@ -32,26 +33,66 @@
             height: calc(100% - 40px);
         }
 
-        h1, h2, footer {
+        h1 {
             text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
         }
 
-        h2 {
+        h2, footer {
+            text-align: center;
             margin-top: 40px;
+            animation: fadeIn 3s ease-in-out;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
+            animation: fadeIn 3s ease-in-out;
         }
 
         ul li {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
         ul li strong {
             display: block;
             margin-bottom: 5px;
+        }
+
+        footer {
+            margin-top: 40px;
+        }
+
+        .team {
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .team h2 {
+            margin-top: 20px;
+        }
+
+        .team ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .team ul li {
+            margin: 5px 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -83,7 +124,17 @@
             <li><strong>Dokumentasi:</strong> Menyimpan dokumentasi semua konten yang dipublikasikan, termasuk artikel, foto, dan desain. Melaporkan kegiatan dan hasil kerja secara rutin kepada pembina OSIS dan pengurus inti.</li>
             <li><strong>Evaluasi:</strong> Melakukan evaluasi rutin terhadap kinerja tim dan hasil publikasi untuk peningkatan kualitas. Menyusun laporan evaluasi sebagai bahan pertimbangan untuk kegiatan berikutnya.</li>
         </ul>
-      <footer>&copy; 2024 frhndevweb</footer>
+
+        <div class="team">
+            <h2>Anggota Seksi Dokumentasi-Editor</h2>
+            <ul>
+                <li>Farhan H</li>
+                <li>M Rifnu</li>
+                <li>Meza</li>
+            </ul>
+        </div>
+
+        <footer>&copy; 2024 frhndevweb</footer>
     </div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -151,8 +202,26 @@
                     }
                 }
             },
-            inter
-                              },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
                     bubble: {
                         distance: 400,
                         size: 40,
